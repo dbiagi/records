@@ -8,7 +8,7 @@
 ## Endpoints
 
 ### Consulta de saldo por id do cliente :heavy_check_mark:
-GET /clients/{client-id}/balance :heavy_check_mark:
+GET /clients/{client-id}/balance
 
 ```json
 {
@@ -18,7 +18,7 @@ GET /clients/{client-id}/balance :heavy_check_mark:
 ```
 
 ### Consulta de lançamentos por id do cliente :heavy_check_mark:
-GET /clients/{client-id}/records?since=2022-12-01T00-00-00&until=2022-12-02T00:00:00 :heavy_check_mark:
+GET /clients/{client-id}/records?since=2022-12-01T00-00-00&until=2022-12-02T00:00:00
 
 ```json
 {
