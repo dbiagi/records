@@ -18,7 +18,7 @@ class ClientRecordPurgeService(
     fun purge(daysToPurge: Int) {
         val dateLimit = now().minusDays(daysToPurge.toLong())
 
-        clientRecordRepository.findByCreatedAtBeforeEquals(dateLimit)
+        clientRecordRepository.findByCreatedAtLessThanEqual(dateLimit)
             .map { mapToHistory(it) }
             .let {
                 logger.info("saving {} client record on history storage", it.size)

@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository
 import java.util.UUID
 
 @Repository
-interface ClientRecordHistoryRepository : JpaRepository<ClientRecordHistory, UUID>
+interface ClientRecordHistoryRepository : JpaRepository<ClientRecordHistory, UUID> {
+    fun findAllByClientId(clientId: UUID): List<ClientRecordHistory>
+}

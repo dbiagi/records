@@ -15,7 +15,7 @@ class ClientRecordPurgeJob(
 
     val logger = KotlinLogging.logger { }
 
-    @Scheduled(cron = "0 0 * * *")
+    @Scheduled(cron = "0 0 0 * * *")
     fun purgeOldClientRecords() {
         try {
             clientRecordPurgeService.purge(DAYS_TO_PURGE)

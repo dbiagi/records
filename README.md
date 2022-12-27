@@ -37,17 +37,17 @@ GET /clients/{client-id}/records?since=2022-12-01T00-00-00&until=2022-12-02T00:0
 }
 ```
 
-### Solicita criação de arquivo de lançamentos antigos (WIP)
-GET /clients/{client-id}/records/generate?since 
+### Solicita criação de arquivo de lançamentos antigos :heavy_check_mark:
+POST /clients/{client-id}/records/history 
 
 ```json
 {
-    "file": "https://localhost:8080/clients/{client-id}/records/file/{id}"
+    "file": "https://localhost:8080/clients/{client-id}/records/history/download"
 }
 ```
 
-### Download de arquivo com lançamentos antigos (WIP)
-GET /clients/{client-id}/records/file/{id}
+### Download de arquivo com lançamentos antigos :heavy_check_mark:
+GET /clients/{client-id}/records/history/download
 
 
 ## Requisitos de negócios
@@ -56,9 +56,9 @@ GET /clients/{client-id}/records/file/{id}
 - Api deve ter paginação e filtros :heavy_check_mark:
 - Lançamentos devem armazenar somente os últimos 90 dias :heavy_check_mark:
 - Job que remove os lançamentos mais antigos que 90 dias da tabela quente e joga para uma tabela fria :heavy_check_mark:
-- Endpoint para solicitar lançamentos mais antigos que 90 dias asincronamente
-- Endpoint para fazer download dessa solicitação
-- Job de expurgo dos arquivos gerados de consultas antigas
+- Endpoint para solicitar lançamentos mais antigos que 90 dias asincronamente :heavy_check_mark:
+- Endpoint para fazer download dessa solicitação :heavy_check_mark:
+- Job de expurgo dos arquivos gerados de consultas antigas :heavy_check_mark:
 - Endpoint para upload de arquivos para adicionar lançamentos
 - Listener para adicionar lançamentos
 - Registros idempotentes, lançamento é unico de acordo com a data, descrição e valor

@@ -13,4 +13,5 @@ class RecordsListener {
     fun addRecord(payload: String) {
         logger.info("consuming message $payload")
     }
+
 }

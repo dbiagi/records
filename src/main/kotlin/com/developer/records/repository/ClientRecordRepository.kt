@@ -13,5 +13,5 @@ interface ClientRecordRepository : JpaRepository<ClientRecord, UUID> {
     @Query("SELECT cr FROM ClientRecord cr WHERE cr.client.id = ?1 AND cr.createdAt >= ?2 AND cr.createdAt <= ?3")
     fun findClientRecords(clintId: UUID, since: LocalDateTime, until: LocalDateTime, pageable: Pageable): List<ClientRecord>
 
-    fun findByCreatedAtBeforeEquals(createdAt: LocalDateTime): List<ClientRecord>
+    fun findByCreatedAtLessThanEqual(createdAt: LocalDateTime): List<ClientRecord>
 }

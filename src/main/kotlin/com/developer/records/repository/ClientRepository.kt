@@ -7,4 +7,5 @@ import java.util.UUID
 
 @Repository
 interface ClientRepository : JpaRepository<Client, UUID>{
+    fun findClientById(id: UUID): Client?
 }

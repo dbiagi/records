@@ -25,7 +25,7 @@ class ClientRecordPurgeServiceTest {
         val givenRecords = ClientRecordFixtures.getRecords()
 
         // and
-        `when`(clientRecordRepository.findByCreatedAtBeforeEquals(any()))
+        `when`(clientRecordRepository.findByCreatedAtLessThanEqual(any()))
             .thenReturn(givenRecords)
 
         // when
@@ -47,7 +47,7 @@ class ClientRecordPurgeServiceTest {
         val givenRecordsHistory = ClientRecordHistoryFixtures.getHistories()
 
         // and
-        `when`(clientRecordRepository.findByCreatedAtBeforeEquals(any()))
+        `when`(clientRecordRepository.findByCreatedAtLessThanEqual(any()))
             .thenReturn(givenRecords)
 
         `when`(clientRecordHistoryRepository.saveAll(any<List<ClientRecordHistory>>()))
